@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Page Title -->
+  <title>BTC</title>
+  <!-- / -->
+
+  <!---Font Icon-->
+  <link href="static/plugin/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="static/plugin/et-line/style.css" rel="stylesheet">
+  <link href="static/plugin/themify-icons/themify-icons.css" rel="stylesheet">
+  <!-- / -->
+
+  <!-- Plugin CSS -->
+  <link href="static/plugin/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/plugin/owl-carousel/css/owl.carousel.min.css" rel="stylesheet">
+  <!-- / -->
+
+  <!-- Theme Style -->
+  <link href="static/css/styles.css" rel="stylesheet">
+  <link href="static/css/color/default.css" rel="stylesheet" id="color_theme">
+  <!-- / -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" />
+  <!-- / -->
+</head>
+
+<!-- Body Start -->
+<body>
+
+  <!-- Loading -->
+  <div id="loading">
+    <div class="load-circle"><span class="one"></span></div>
+  </div>
+  <!-- / -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">VTU 8th Sem Project <span class="theme-bg"></span></a>
+        <!-- / -->
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarshark" aria-controls="navbarshark" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- / -->
+
+        <!-- Top Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarshark">
+          <ul class="navbar-nav ml-auto">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="letsbegin.html">Let's Begin</a></li>
+            <li><a class="nav-link active" href="btc.html">BTC</a></li>
+            <li><a class="nav-link" href="delta.html">Delta</a></li>
+            <li><a class="nav-link" href="timeSeries.html">Time Series</a></li>
+            <li><a class="nav-link" href="viewdata.html">View Data</a></li>
+
+            <li><a class="nav-link-btn" href="https://github.com/SudSwastik/FYP" target="_blank" >Github</a></li>
+          </ul>
+        </div>
+        <!-- / -->
+      </nav> <!-- Navbar -->     
+    </div>
+  </header>
+  <!-- Header End -->
+  
+  <!-- Main Start -->
+  <main>
+
+    <!-- Home Banner -->
+    <section class="page-header theme-g-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10 text-center">
+            <h2>Bitcoin (BTC)</h2>
+          </div>
+        </div>
+      </div> <!-- container -->
+    </section>
+    <!-- / -->
+
+    <!-- Price -->
+    <section class="price-section p-60px-tb sm-p-40px-tb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center m-40px-b sm-m-30px-b">
+            <div class="section-title">
+              <span class="theme-g-bg"></span>
+              <p>As we have already seen, Bitcoin is the most dominant and perhaps most important Cryptocurrency in the market. It's Market Capitalization and Price are higher than those of all the other major Cryptocurrencies combined. This brings us to the analysis of the Bitcoin market. How it's price changed over time? What are the events that drove this price change? What can we expect from it in the future? </p>
+              <p>So let's us start by Plotting the time series of Bitcoin. This time series shows the Highes Price attained by Bitcoin eveyday from they year 2013 to 2018.</p><br/><br/>
+                <div class="container">
+                    <div class="jumbotron" style="padding: 10px 10px 10px 10px; background-color: ##F5F5F5">
+                      <p style="text-align: 'left';font-family: monospace; font-size: 14px" >  
+                        btcData <- read.csv('BTC.csv')<br/>
+                        btcData$Date<-as.character(btcData$Date)<br/>
+                        btcData$Date <- as.Date(btcData$Date,format='%Y-%m-%d')<br/>
+                        library(ggplot2)<br/>
+                        ggplot(btcData,aes(x=Date,y=High))+geom_line(color='deepskyblue2')+theme_minimal()+xlab("Year")+<br/>ylab("Highes Price in USD attained by Bitcoin")<br/>
+                       </p>
+                    </div>
+                  </div>
+                  <img src="images/bitcoin.png" style="width:80%;height: 80%"/> <br/>
+                  <p style="color:black"><b>Observations : </b><br/>
+                    <p>
+                      <ol style="text-align: left">
+                        <li>The btc Price did not incerease or fluctuate significantly upto the year 2017. The little fluctuation that we see before 2017 was around 2014. After 2017, we see a lot of fluctuations in the price.</li>
+                        <li>October 2013 was a very important year for Bitcoin. Despite the FBI shutdown of <a href="https://en.wikipedia.org/wiki/Silk_Road_(marketplace)" target="_blank">The Silk Road</a> in October 2013, Bitcoin’s popularity continued to grow.</li>
+                        <li>On November 28, 2013, Bitcoin, for the first time, touched the price of 1000 USD.</li>
+                        <li>On Jan 1, 2014 the price of Bitcoin fell to 775.35 USD and it continued falling after, sometimes going up.This happened mainly because MT GOX , the largest Bitcoin exchange at that time, was hacked.</li>
+                        <li>About 850,000 bitcoins amounting to $450 million were stolen forcing MT GOX, which at that time was handling 70% of the Bitcoin network’s transactions, to shut down.</li>
+                        <li>2016 proved to be an amazing year for Bitcoin, with the mining rewards halving from 25 BTC to 12.5 BTC, limiting the supply and pushing the trade price of Bitcoin to highs not seen since Mt Gox was around. This eventually led to a significant increase in Bitcoin prices in 2017.</li>
+                        <li>In Mar 2017, The day one bitcoin overtook the price of an ounce of gold.</li>
+                        <li>On April Fools’ Day in 2017, Japan legalizes bitcoin as a method of payment, sending its value even higher.</li>
+                        <li>In May 2017, Bitcoin prices touched $2000 for the first time. Thereafter, it continued increasing.</li>
+                        <li>On June 15, Bitcoin briefly crashes by 19% overnight, just days after breaking past the $3,000 milestone.</li>
+                        <li>On Nov 28, Bitcoin price passes $10000 for the first time. Hour laters the price tops $11000 and keeps powering higher.</li>
+                        <li> The main price-drivers are new main-street investors: Bitcoin adoption has skyrocketed among average Joes in Japan and Korea over the past several months, the Times’ Nathaniel Popper finds.</li>
+                        <li>In December2017, Satoshi Nakamoto’s unit of decentralized exchange explodes to a gut-punching all-time high of $19,783 per bitcoin.</li>
+                        <li>Suspicious trading preceding the Coinbase debut of the bitcoin spinoff, Bitcoin Cash, a few days later leads to a major sell-off, and on December 22, bitcoin drops below $13,000.</li>
+                      <ol>
+            </div>
+          </div> <!-- col -->
+        </div> <!-- row -->
+
+      
+   
+
+   
+
+       
+
+
+
+        </div> <!-- row -->
+      </div>
+    </section>
+    <!-- Price Page -->
+    
+    <!-- / -->
+
+  </main>
+  <!-- Main End -->
+
+ <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+     
+      <div class="row">
+        <div class="col-12 footer-copy">
+          <p class="m-0px">VTU 8th Sem Project by Saurabh Prakash and Sudarshan Kumar</p>
+        </div><!-- col -->
+      </div> <!-- row -->
+    </div> <!-- container -->   
+  </footer>
+  <!-- / -->
+
+  <!-- jQuery -->
+  <script src="static/js/jquery-3.2.1.min.js"></script>
+  <script src="static/js/jquery-migrate-3.0.0.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="static/plugin/bootstrap/js/popper.min.js"></script>
+  <script src="static/plugin/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/plugin/owl-carousel/js/owl.carousel.min.js"></script>
+  <!-- custom -->
+  <script src="static/js/custom.js"></script>
+
+</body>
+<!-- Body End -->
+
+</html>
